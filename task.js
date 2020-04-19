@@ -1,4 +1,5 @@
 function myFunction(param) {
+Var output =[]
     for(var i = 1; i<=param; i++) {
       if (i % 2 === 0 && i % 3 === 0 && i % 5 === 0) {
         output.push("yu-gi-oh")
