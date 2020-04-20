@@ -1,13 +1,23 @@
-function myFunction(param) {
-Var output =[]
-    for(var i = 1; i<=param; i++) {
-      if (i % 2 === 0 && i % 3 === 0 && i % 5 === 0) {
-        output.push("yu-gi-oh")
-      } else if (i % 2 === 0 && i % 5 === 0) {
-        output.push("yu-oh")
-      } else if (i % 2 === 0 && i % 3) {
-        output.push("yu-gi")
-      } else output.push(i)
+function rangeSequence(start, num, step = 1){
+  return Array.from({ length: (num - start) / step + 1 },function(_,index){
+    return start + (index * step);
+  })
+}
+
+function isDivisible(number){
+  return rangeSequence(1,number).map(el => {
+    let i = el;
+    if (i % 5 === 0){
+      return "oh"
     }
-    return output;
-  }
+    
+    if (i % 3 === 0){
+      return "gi"
+    }
+    if (i % 2 === 0){
+      return "yu"
+    } 
+    return i;
+  })
+}
+isDivisible(10);
